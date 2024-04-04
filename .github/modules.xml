@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/pay-docs-test.iml" filepath="$PROJECT_DIR$/.idea/pay-docs-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.github/pay-docs-test.iml" filepath="$PROJECT_DIR$/.github/pay-docs-test.iml" />
     </modules>
   </component>
 </project>
