@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="hi"
+                 name="GOV.UK Pay technical documentation"
+                 start-page="take-a-payment.md">
+
+    <toc-element topic="take-a-payment.md"/>
+    <toc-element topic="Take-recurring-payments.md"/>
+    <toc-element topic="Reference1.md">
+        <toc-element topic="Create-a-payment.md"/>
+    </toc-element>
+    <toc-element topic="Reference2.md"/>
+</instance-profile>

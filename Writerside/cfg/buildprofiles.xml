@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <variables></variables>
+    <build-profile instance="hi">
+        <variables>
+            <noindex-content>true</noindex-content>
+            <custom-favicons>crown-favicon.ico</custom-favicons>
+            <header-logo>gov-uk.svg</header-logo>
+            <download-title>Start using GOV.UK Pay</download-title>
+            <download-page>https://gov.uk/pay</download-page>
+            <showDownloadButton>true</showDownloadButton>
+            <primary-color>#1d70b8</primary-color>
+        </variables>
+        <footer>
+            <copyright>Crown copyright</copyright>
+            <link href="https://selfservice.payments.service.gov.uk/my-services">GOV.UK Pay admin tool</link>
+            <link href="https://www.payments.service.gov.uk/accessibility-statement/">GOV.UK Pay Website Accessibility</link>
+            <link href="https://www.payments.service.gov.uk/cookies/">Cookies</link>
+            <link href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</link>
+        </footer>
+    </build-profile>
+
+</buildprofiles>

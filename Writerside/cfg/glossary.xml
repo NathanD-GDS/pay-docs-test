@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE terms SYSTEM "https://resources.jetbrains.com/writerside/1.0/glossary.dtd">
+<terms>
+    <term name="create-agreement">This endpoint creates an agreement for recurring payments.</term>
+    <term name="create-payment">This endpoint creates a payment.</term>
+</terms>
