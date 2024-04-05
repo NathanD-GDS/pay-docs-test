@@ -234,7 +234,7 @@ These error descriptions are intended for developers, not your users.
 : There's something wrong with GOV.UK Pay. <p>If there are no problems on [our status page](https://payments.statuspage.io/), you can [contact us with your error code](support.md) and we'll investigate.
 
 `P0900`
-: You've made too many requests too quickly using your API key.<p>You can [read more about rate limits](Reference1.md#rate-limits)
+: You've made too many requests too quickly using your API key.<p>You can [read more about rate limits](api-reference#rate-limits)
 
 `P0920`
 : Our firewall blocked your request. <p>To fix a P0920 API error, make sure your API request:<li>has a `Content-Type: application/json` header<li>uses `application/json` in the `Accept` header if you’re using an `Accept` header<li>uses `https` in the `return_url`, not `http`<li>does not use invalid characters like `<`, `>`, `"`, `\`, or `|`<li>does not have an empty request body if you’re making a `POST` request
@@ -338,6 +338,7 @@ For example:
   ...
 }
 ```
+{collapsible="true" collapsed-title="state object example"}
 
 ### Payment status meanings
 
@@ -345,20 +346,20 @@ The `status` value indicates where the payment is in the payment status lifecycl
 
 `finished` indicates whether the payment journey is finished. A `finished` payment journey does not always mean the user has made a payment. For example, a user may submit their payment details but their bank rejects the payment - the payment journey is `finished` but no payment has actually been made.
 
-| `status`     | Meaning                                                                                                                                                                                                                                                                                                                                                                | <nobr>`finished`</nobr> |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| <nobr>`created`</nobr>    | Payment created using the API. Your user has not yet visited `next_url`.                                                                                                                                                                                                                                                                                                | <nobr>`false`</nobr>    |
-| <nobr>`started`</nobr>    | Your user has visited `next_url` and is entering their payment details.                                                                                                                                                                                                                                                                                                 | <nobr>`false`</nobr>    |
-| <nobr>`submitted`</nobr>  | Your user submitted payment details and went through authentication, if it was required.<br><br>The payment service provider has authorised the payment, but the user has not yet selected **Confirm**.                                                                                                                                                                    | <nobr>`false`</nobr>    |
-| <nobr>`capturable`</nobr> | The payment is a delayed capture and your user has submitted their payment details and selected **Confirm**.<br><br>You can [read more about how to capture this payment](https://docs.payments.service.gov.uk/delayed_capture/#delay-taking-a-payment).                                   | <nobr>`false`</nobr>    |
-| <nobr>`success`</nobr>    | Your user successfully completed the payment by selecting **Confirm**.<br><br>We redirected your user to a payment confirmation page.                                                                                                                                                                                                                                      | <nobr>`true`</nobr>     |
-| <nobr>`failed`</nobr>     | The payment failed. This failure could be because the payment timed out after 90 minutes, the user's payment method was rejected, or your user cancelled the payment.<br><br>We showed the user a failure screen.<br><br>Check the [payment status error codes](/api_reference/#errors-caused-by-payment-statuses) for the possible reasons for a `failed` payment. | <nobr>`true`</nobr>     |
-| <nobr>`cancelled`</nobr>  | Your service cancelled the payment using an API request or the GOV.UK Pay admin tool.<br><br>You can [read more about how to cancel payments.](https://docs.payments.service.gov.uk/making_payments/#cancel-a-payment-that-s-in-progress)                                    | <nobr>`true`</nobr>     |
-| <nobr>`error`</nobr>      | Something went wrong with GOV.UK Pay or the payment service provider. The payment failed safely with no money taken from the user.<br><br>We showed the paying user a screen stating ”**We’re experiencing technical problems. No money has been taken from your account. Cancel and go back to try the payment again.**”                                       | <nobr>`true`</nobr>     |
+| `status`                | Meaning                                                                                                                                                                                                                                                                                                                                                   | `finished` |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
+| `created`    | Payment created using the API. Your user has not yet visited `next_url`.                                                                                                                                                                                                                                                                                  | `false` |
+| `started`  | Your user has visited `next_url` and is entering their payment details.                                                                                                                                                                                                                                                                                   | `false` |
+| `submitted` | Your user submitted payment details and went through authentication, if it was required.<p>The payment service provider has authorised the payment, but the user has not yet selected **Confirm**.                                                                                                                                                        | `false` |
+| `capturable` | The payment is a delayed capture and your user has submitted their payment details and selected **Confirm**.<p>You can [read more about how to capture this payment](https://docs.payments.service.gov.uk/delayed_capture/#delay-taking-a-payment).                                                                                                       | `false` |
+| `success`  | Your user successfully completed the payment by selecting **Confirm**.<p>We redirected your user to a payment confirmation page.                                                                                                                                                                                                                          | `true` |
+| `failed`   | The payment failed. This failure could be because the payment timed out after 90 minutes, the user's payment method was rejected, or your user cancelled the payment.<p>We showed the user a failure screen.<p>Check the [payment status error codes](/api_reference/#errors-caused-by-payment-statuses) for the possible reasons for a `failed` payment. | `true` |
+| `cancelled` | Your service cancelled the payment using an API request or the GOV.UK Pay admin tool.<p>You can [read more about how to cancel payments](take-a-payment.md#check-if-you-can-cancel-a-payment).                                                                                                                                                            | `true` |
+| `error`    | Something went wrong with GOV.UK Pay or the payment service provider. The payment failed safely with no money taken from the user.<p>We showed the paying user a screen stating ”**We’re experiencing technical problems. No money has been taken from your account. Cancel and go back to try the payment again.**”                                      | `true` |
 
 If something went wrong with a payment, the `code` and `message` attributes in the API response can help you find out what happened.
 
-`code` is [an API error code](/api_reference/#gov-uk-pay-api-error-codes).
+`code` is [an API error code](api-reference.md#gov-uk-pay-api-error-codes).
 
 `message` is a description of what went wrong.
 

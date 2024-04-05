@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b8fcf8e-8ace-4660-aae2-536f4cf47c4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/home.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Writerside/topics/support.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Writerside/hi.tree" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/hi.tree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Writerside/topics/Reference1.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/Reference1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Writerside/topics/Reference2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Writerside/topics/Reference1.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/api-reference.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Writerside/topics/take-a-payment.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writerside/topics/take-a-payment.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
