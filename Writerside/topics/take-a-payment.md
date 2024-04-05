@@ -194,7 +194,7 @@ As well as the details you sent in your request (`description`, `amount`, `refer
 `_links`
 : other URLs and API methods for further actions for this payment
 
-You can see full definitions and values for every response attribute in our [API reference](Reference2.md)
+You can see full definitions and values for every response attribute in our [API reference](Reference1.md)
 
 Read more about [reporting and reconciliation](/reporting) and [payment flow](/payment_flow/#how-gov-uk-pay-works).
 

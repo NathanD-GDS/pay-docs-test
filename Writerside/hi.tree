@@ -6,10 +6,11 @@
                  name="GOV.UK Pay technical documentation"
                  start-page="take-a-payment.md">
 
+    <toc-element topic="home.md"/>
     <toc-element topic="take-a-payment.md"/>
     <toc-element topic="Take-recurring-payments.md"/>
     <toc-element topic="Reference1.md">
         <toc-element topic="Create-a-payment.md"/>
     </toc-element>
-    <toc-element topic="Reference2.md"/>
+    <toc-element topic="support.md"/>
 </instance-profile>

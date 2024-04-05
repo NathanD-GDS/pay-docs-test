@@ -1,0 +1,21 @@
+# GOV.UK Pay technical documentation
+
+Use this technical documentation to find out how to:
+
+- use the GOV.UK Pay API
+- integrate your service with GOV.UK Pay
+
+You can read [non-technical information](https://www.payments.service.gov.uk/using-govuk-pay/) about:
+
+- creating an account and selecting a payment service provider (PSP)
+- managing your account with Stripe, GOV.UK Pay's PSP
+- using the Apple Pay and Google Pay digital wallets
+- security and compliance
+
+[Contact us](/support_contact_and_more_information/) if you have any questions or feedback.
+
+## How much GOV.UK Pay costs
+
+There's no charge to use the GOV.UK Pay API.
+
+You'll still need to pay your PSP’s transaction fees. If you use GOV.UK Pay's PSP, we'll automatically deduct the transaction fee from each payment.
