@@ -40,7 +40,7 @@
         </secondary>
 
         <!--    Optionally add additional cards and links to topics that are not in this section but may be relevant.    -->
-        <misc>
+<!--        <misc>
             <cards>
                 <title>Other relevant topics as wide cards</title>
                 <a href=""/>
@@ -100,6 +100,7 @@
                 </group>
             </links>
         </misc>
+        -->
     </section-starting-page>
 
 </topic>
