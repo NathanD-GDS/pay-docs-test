@@ -1,6 +1,6 @@
 <link-summary>The GOV.UK Pay API reference gives an overview of everything you can do in the GOV.UK Pay API.</link-summary>
 
-# API reference 1
+# API reference
 
 GOV.UK Pay is a payment platform for government. If you work in the public sector, [read more about using GOV.UK Pay to take payments](https://www.payments.service.gov.uk/).
 
@@ -37,7 +37,7 @@ Do not add an allow list of IP addresses to your firewall, because GOV.UK Pay’
 
 Per second, you can make:
 
-- up to 15 `POST` requests to [create a payment](/api_reference/create_a_payment_reference)
+- up to 15 `POST` requests to [create a payment](api-reference.md#create-a-payment)
 - up to 15 `POST `requests to [capture a delayed payment](/api_reference/capture_payment_reference)
 - up to 15 other `POST` requests
 
@@ -45,11 +45,11 @@ Per second, you can make:
 
 If you exceed the rate limit, this will return a `429` HTTP status code (Too many requests) and error code `P0900`. After a second, you’ll be able to retry your attempt in a reasonable way. For example, using [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
-[Contact us](/support_contact_and_more_information/) if you would like to discuss rate limiting applied to your service account, or give us feedback.
+[Contact us](support.md) if you would like to discuss rate limiting applied to your service account, or give us feedback.
 
 ## Pagination
 
-Responses from search endpoints, such as [search payments](/api_reference/search_payments_reference) or [search refunds](/api_reference/search_refunds_reference), are split into pages. By default, these endpoints display 500 results per page and return the first page of results.
+Responses from search endpoints, such as [search payments](api-reference.md#search-payments) or [search refunds](/api_reference/search_refunds_reference), are split into pages. By default, these endpoints display 500 results per page and return the first page of results.
 
 You can use query parameters to view different pages and control the number of results on each page.
 
@@ -525,6 +525,112 @@ The following endpoints are related to payments in GOV.UK Pay:
   "field": "amount",
   "code": "P0102",
   "description": "Invalid attribute value: amount. Must be less than or equal to 10000000"
+}
+        </sample>
+    </response>
+</api-endpoint>
+
+#### Search payments
+
+<api-endpoint openapi-path="../../Pay-api-spec.json" endpoint="/v1/payments" method="GET">
+    <request>
+        <sample lang="JSON" title="Search payments by date">
+            {curl -X GET ""https://publicapi.payments.service.gov.uk/v1/payments?from_date=2021-01-15T08:30:00Z" 
+            -H "Authorization: Bearer api_test_123abc456def"}
+        </sample>
+    </request>
+    <response type="200">
+        <sample lang="JSON">
+{
+  "total": 100,
+  "count": 20,
+  "page": 1,
+  "results": [
+    {
+      "amount": 1200,
+      "authorisation_mode": "web",
+      "authorisation_summary": {
+        "three_d_secure": {
+        "required": true,
+        }
+      },
+      "description": "Pay your council tax.",
+      "reference": "12345",
+      "language": "en",
+      "email": "sherlock.holmes@example.com",
+      "state": {
+        "status": "success",
+        "finished": true
+      },
+      "payment_id": "hu20sqlact5260q2nanm0q8u93",
+      "payment_provider": "sandbox",
+      "created_date": "2021-04-07T09:49:36.631Z",
+      "refund_summary": {
+        "status": "available",
+        "amount_available": 7000,
+        "amount_submitted": 5000
+      },
+      "settlement_summary": {
+        "capture_submit_time": "2021-04-07T09:53:46.084Z",
+        "captured_date": "2021-04-07"
+      },
+      "card_details": {
+        "last_digits_card_number": "1111",
+        "first_digits_card_number": "444433",
+        "cardholder_name": "MR RALPH ELLISON",
+        "expiry_date": "10/23",
+        "billing_address": {
+          "line1": "52 Invisible Street",
+          "line2": "Flat 581",
+          "postcode": "IN5 M4N",
+          "city": "London",
+          "country": "GB"
+        },
+        "card_brand": "Visa",
+        "card_type": "credit"
+      },
+      "delayed_capture": false,
+      "moto": false,
+      "total_amount": 12000,
+      "provider_id": "4718b3be-d765-4bcd-a7aa-4c2fcbb986cf",
+      "return_url": "https://stripe.com/docs/payments/checkout/custom-success-page",
+      "_links": {
+        "self": {
+          "href": "https://publicapi.payments.service.gov.uk/v1/payments/hu20sqlact5260q2nanm0q8u93",
+          "method": "GET"
+        },
+        "cancel": null,
+        "events": {
+          "href": "https://publicapi.payments.service.gov.uk/v1/payments/hu20sqlact5260q2nanm0q8u93/events",
+          "method": "GET"
+        },
+        "refunds": {
+          "href": "https://publicapi.payments.service.gov.uk/v1/payments/hu20sqlact5260q2nanm0q8u93/refunds",
+          "method": "GET"
+        },
+        "capture": null
+      },
+      "card_brand": "Visa"
+    }
+    {
+      "amount": 1200,
+      "description": "Pay your council tax.",
+      "reference": "12345",
+      . . .
+    }
+    ]
+  "_links": {
+    "self": {
+      "href": "https://publicapi.payments.service.gov.uk/v1/payments?from_date=2021-01-01T08%3A00%3A00Z&display_size=500&state=success&page=1"
+        },
+      "first_page": {
+            "href": "https://publicapi.payments.service.gov.uk/v1/payments?from_date=2021-01-01T08%3A00%3A00Z&display_size=500&state=success&page=1"
+      },
+      "last_page": {
+            "href": "https://publicapi.payments.service.gov.uk/v1/payments?from_date=2021-01-01T08%3A00%3A00Z&display_size=500&state=success&page=1"
+      }
+    }
+  }
 }
         </sample>
     </response>
