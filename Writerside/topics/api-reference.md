@@ -359,7 +359,7 @@ The `status` value indicates where the payment is in the payment status lifecycl
 
 If something went wrong with a payment, the `code` and `message` attributes in the API response can help you find out what happened.
 
-`code` is [an API error code](api-reference.md#gov-uk-pay-api-error-codes).
+`code` is [an API error code](api-reference.md#gov-uk-pay-api-error-codes "A summary of GOV.UK Pay-specific error codes").
 
 `message` is a description of what went wrong.
 

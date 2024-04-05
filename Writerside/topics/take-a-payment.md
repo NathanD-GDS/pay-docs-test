@@ -306,3 +306,14 @@ that’s not `null`, you can cancel the payment. For example:
   "method": "POST"
 }
 ```
+
+<seealso>
+    <category ref="related">
+        <a href="Take-recurring-payments.md">Taking recurring payments</a>
+        <a href="api-reference.md#create-a-payment">API reference for creating a payment</a>
+    </category>
+    <category ref="product">
+        <a href="https://www.payments.service.gov.uk/">GOV.UK Pay product pages</a>
+        <a href="https://selfservice.payments.service.gov.uk/my-services">GOV.UK Pay admin tool</a>
+    </category>
+</seealso>
