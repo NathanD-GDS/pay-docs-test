@@ -55,8 +55,6 @@ If your service takes [digital wallet payments](/digital_wallets/), your user ca
 
 This page also shows the `description` and the amount your user has to pay, making it clear what they’re paying for.
 
-<%= image_tag "/images/flow-payment-details-page-jan24.png", { :alt => '' } %>
-
 ![](flow-payment-details-page-jan24.png)
 
 Your user enters their payment details and selects **Continue**. You can also [prefill some of the fields](/optional_features/prefill_user_details).

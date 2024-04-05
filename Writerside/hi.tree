@@ -4,9 +4,9 @@
 
 <instance-profile id="hi"
                  name="GOV.UK Pay technical documentation"
-                 start-page="Section-Starting-Page.topic">
+                 start-page="home.topic">
 
-    <toc-element topic="Section-Starting-Page.topic"/>
+    <toc-element topic="home.topic"/>
     <toc-element topic="How-GOV-UK-Pay-works.md"/>
     <toc-element topic="api-reference.md"/>
     <toc-element topic="take-a-payment.md"/>
