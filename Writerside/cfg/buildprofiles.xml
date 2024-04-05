@@ -7,7 +7,7 @@
         <variables>
             <noindex-content>true</noindex-content>
             <custom-favicons>crown-favicon.ico</custom-favicons>
-            <header-logo>gov-uk.svg</header-logo>
+            <header-logo>govuk-icon-512.png</header-logo>
             <download-title>Start using GOV.UK Pay</download-title>
             <download-page>https://gov.uk/pay</download-page>
             <showDownloadButton>true</showDownloadButton>
