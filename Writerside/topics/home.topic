@@ -24,7 +24,7 @@
         <!--    Add several topics that are most important for this section.    -->
         <primary>
             <title>Get started</title>
-            <a href="" summary="Learn about what to do to get started with GOV.UK Pay.">Quick start</a>
+            <a href="Quick-start-guide.md" summary="Learn about what to do to get started with GOV.UK Pay.">Quick start</a>
             <a href="How-GOV-UK-Pay-works.md" summary="Understand GOV.UK Pay's payment flow.">How GOV.UK Pay works</a>
             <a href="api-reference.md" summary="See a comprehensive index of everything you can do in the GOV.UK Pay API."/>
             <a href="take-a-payment.md" summary="Learn how to take a basic payment using the GOV.UK Pay API."/>
@@ -34,9 +34,9 @@
         <secondary>
             <title>Explore advanced features</title>
             <a href="Take-recurring-payments.md" summary="Learn how to take automatic recurring payments from your users."/>
-            <a href="" summary="With a custom card summary"/>
-            <a href="">Custom card title</a>
-            <a href="" summary="With a custom card summary">Custom card title</a>
+            <a href="" summary="Learn how to receive automatic updates for different payment events.">Create webhooks</a>
+            <a href="" summary="Use our mock card numbers to test your service before you take live payments.">Test your integration</a>
+            <a href="" summary="Learn how to take payments using Apple Pay and Google Pay.">Take digital wallet payments</a>
         </secondary>
 
         <!--    Optionally add additional cards and links to topics that are not in this section but may be relevant.    -->

@@ -1,0 +1,129 @@
+# Quick start
+
+> You must store your API keys securely. You must not share this key in publicly accessible documents or repositories. You must not share it with anyone who should not be using the GOV.UK Pay API directly.
+{style="warning"}
+
+Read this section to learn about what to do to get started with GOV.UK Pay.
+
+## Before you start
+
+Before you start using GOV.UK Pay, you should:
+
+* read how to [get started](https://www.payments.service.gov.uk/getstarted/) and decide if GOV.UK
+  Pay is right for your service
+* sign up to the [GOV.UK Pay admin tool](https://selfservice.payments.service.gov.uk/register/email-address)
+* read the GOV.UK Service Manual guidance on [deploying new
+  software](https://www.gov.uk/service-manual/making-software/deployment.html)
+
+## Decide how you want to take payments
+
+There are 2 ways you can take payments with GOV.UK Pay:
+
+* integrate with the GOV.UK Pay API
+* set up a payment link
+
+### Integrate with the API
+
+If you want to build a technical integration between your service and the GOV.UK Pay API, your service team should have the necessary skills.
+
+You can refer to the [GOV.UK Service Manual](https://www.gov.uk/service-manual/the-team/what-each-role-does-in-service-team#roles-your-team-must-have) for more information.
+
+You can generate a client library from [our OpenAPI file](https://github.com/alphagov/pay-publicapi/blob/master/openapi/publicapi_spec.json) using [Swagger Editor](http://editor.swagger.io/). This may be an easier way for you to integrate your service with GOV.UK Pay than writing a client library from scratch.
+
+Read our [documentation on integrating with the API](/integrate_with_govuk_pay/#integrate-with-the-gov-uk-pay-api) for more information. Read our [API reference](/api_reference) for an index of everything the GOV.UK API can do.
+
+### Set up a payment link
+
+[Payment links](https://www.payments.service.gov.uk/govuk-payment-pages/) are individual pages for taking online payments.
+
+To set up a payment link, [create an account](https://selfservice.payments.service.gov.uk/register/email-address) or [sign in to the admin tool](https://selfservice.payments.service.gov.uk/login).
+
+## The GOV.UK Pay API
+
+The GOV.UK Pay API is based on REST principles with endpoints returning data
+in JSON format, and standard HTTP error response codes. Our API
+lets you:
+
+* begin and complete payments
+* view the event history for individual payments
+* view transactions, refunds, and disputes within a specified time period
+* issue full or partial refunds
+* create agreements to take recurring payments
+
+You'll be able to create API keys for 2 different accounts. These are your:
+
+- test ('sandbox') account, for [testing the GOV.UK Pay API and your service](/testing_govuk_pay)
+- live account, for taking payments from your users after you [switch to live](/switching_to_live)
+
+If your payment service provider (PSP) is Stripe, you can also ask us for a test Stripe account so you can see how [transaction fees](/reporting/#psp-fees) and payments to your bank account work.
+
+When you've signed up for a test account, follow these instructions to get started
+with our API and make a test API request.
+
+## Test the API
+
+### Create a test API key
+
+1. Sign in to the [GOV.UK Pay admin
+   tool](https://selfservice.payments.service.gov.uk/) with the test
+   account login details you received.
+
+2. Select your account.
+
+3. Select **Settings**, then **API keys**.
+
+3. Select **Create a new API key**.
+
+Make sure you [keep your API keys safe](/security/#securing-your-developer-keys).
+
+<%= warning_text('Only use a test API key on your test account. Do not use a live API key on your test account.') %>
+
+### Make a test API request
+
+You can make test API requests to GOV.UK Pay, using your test API key for [authentication](/api_reference/#authentication).
+
+You can use API testing tools such as [Bruno](https://www.usebruno.com/) to make test API requests.
+
+This is an example API request and request body to create a new payment for a passport application:
+
+```POST /v1/payments```
+
+```json
+{
+"amount": 12000,
+"reference": "12345",
+"description": "New passport application",
+"return_url": "https://service-name.gov.uk/transactions/12345"
+}
+```
+
+Services that use test accounts can optionally use HTTP, rather than HTTPS,
+for return URLs.
+
+If the test request is successful, you will receive a `201 Created` response with
+a JSON body.
+
+The JSON includes a ``next_url`` link. This URL is where your service should
+redirect your user for them to make their payment.
+
+Read more about [taking payments](/making_payments/#take-a-payment).
+
+### Simulate your users' payment journey
+
+Go to the ``next_url`` with a browser, and you’ll see the payment screen.
+Choose a [mock card number](/testing_govuk_pay/#mock-card-numbers) and
+enter it to simulate a payment in the test environment. For the other required
+details, enter some test information which should have:
+
+* an expiry date that is in the future and in the format MM/YYYY or MM/YY
+
+* a valid postcode
+
+Submit the payment.
+
+### View transactions at GOV.UK Pay admin tool
+
+Select an account in the [GOV.UK Pay admin
+tool](https://selfservice.payments.service.gov.uk/), then select __Transactions__.
+
+You can also view test transactions using the API.

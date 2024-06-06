@@ -8,6 +8,7 @@
 
     <toc-element topic="home.topic"/>
     <toc-element topic="How-GOV-UK-Pay-works.md"/>
+    <toc-element topic="Quick-start-guide.md"/>
     <toc-element topic="api-reference.md"/>
     <toc-element topic="take-a-payment.md"/>
     <toc-element topic="Take-recurring-payments.md"/>
